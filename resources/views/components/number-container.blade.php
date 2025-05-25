@@ -1,0 +1,1 @@
+<p class="font-semibold text-slate-600 font-mono text-sm sm:text-[16px]">{{$slot}}</p>

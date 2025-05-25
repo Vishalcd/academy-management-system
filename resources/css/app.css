@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@source "../views";
+
+:root {
+    line-height: 1.5;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    @apply bg-blue-500 text-slate-50;
+}
+
+body {
+    margin: 0;
+    min-width: 100dvw;
+    min-height: 100dvh;
+    background-color: #f1f5f9;
+    overflow-x: hidden;
+    gap: 1.5rem;
+
+    @apply text-slate-700 md:gap-[2.5rem];
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    @apply md:px-[2rem];
+    align-self: stretch;
+}
+
+button,
+select,
+option {
+    cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+
+    &:focus,
+    &:active {
+        @apply outline-2 outline-blue-200 -outline-offset-2;
+    }
+}
+
+/* Student Grid */
+.student-grid {
+    grid-template-columns: 6rem 24rem 16rem 13rem 12rem 100px;
+    justify-self: stretch;
+}
+
+/* Transctions Grid */
+.transactions-grid {
+    grid-template-columns: 6rem 16rem 16rem 14rem 14rem 150px;
+    justify-self: stretch;
+}
+
+/* Expenses Grid */
+.expense-grid {
+    grid-template-columns: 6rem 20rem 12rem 10rem 12rem 12rem 100px;
+    justify-self: stretch;
+}
+
+/* Employee Grid */
+.employee-grid {
+    grid-template-columns: 6rem 22rem 16rem 13rem 14rem 100px;
+    justify-self: stretch;
+}
+
+canvas {
+    display: block;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+/* Nav show class */
+.show {
+    right: 0;
+}
+#nav {
+    transition: all 0.2s linear;
+}

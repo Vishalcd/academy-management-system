@@ -1,0 +1,1 @@
+<h2 class="font-bold text-2xl text-slate-600 text-nowrap">{{$slot}}</h2>
