@@ -1,5 +1,5 @@
 <x-layout>
-
+    <x-slot name="title">Expenses</x-slot>
     {{-- add expense form --}}
     <template id="add-expense">
         <form method="POST" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
@@ -12,14 +12,14 @@
                 @csrf
                 <x-input-box lable="Enter Title" name="title" id="title" placeholder="Enter Expense Title"
                     icon="article" />
-                <x-input-box lable="Unit Price" name="unit_price" id="unit_price" placeholder="₹100.00"
+                <x-input-box lable="Unit Price" name="unit_price" id="unit_price" placeholder="{{formatCurrency(1000)}}"
                     icon="cash-banknote" />
 
                 <x-input-box lable="Total Unit" name="quantity" id="quantity" placeholder="Enter Total Unit"
                     icon="package" />
 
-                <x-input-box lable="Total Price" name="total_price" id="total_price" placeholder="₹1,000.00"
-                    icon="moneybag" />
+                <x-input-box lable="Total Price" name="total_price" id="total_price"
+                    placeholder="{{formatCurrency(10000)}}" icon="moneybag" />
 
             </div>
 
@@ -55,7 +55,7 @@
 
             <div class="col-start-1 -col-end-1 mt-2">
                 <x-input-text-area lable="Description" icon="file-description" id="description" name="description"
-                    placeholder="Enter breif description of school expense" />
+                    placeholder="Enter breif description of expense" />
             </div>
 
             <!-- Actions -->
@@ -87,7 +87,7 @@
                     {{-- Sort By Low-to-High Expense --}}
                     <x-filter-row lable="Sort By Expense">
                         <x-select name="sort" id="sort"
-                            :options="['' => 'All Expense','low_to_high' => 'Price Low to High','high_to_low' => 'Price High to Low']" />
+                            :options="['' => 'All Expense','low_to_high' => 'Expense Low to High','high_to_low' => 'Expense High to Low']" />
                     </x-filter-row>
 
                 </x-button-filter>

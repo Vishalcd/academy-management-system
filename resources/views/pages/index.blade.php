@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title">Overview</x-slot>
     <main class="bg-white rounded-xl border p-4 md:p-8 border-slate-200">
         <!-- Page Details & Filters -->
         <div class="flex items-center justify-between mb-6 lg:mb-12">
@@ -93,8 +94,8 @@
 
     @section('scripts')
     <script>
-        const doughnutData = @json($doughnutData);
-        const graphData = @json($graphData);
+        const doughnutData = @json($doughnutData) ;
+        const graphData = @json($graphData) ;
     </script>
     @endsection
 </x-layout>

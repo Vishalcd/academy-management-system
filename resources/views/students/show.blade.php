@@ -1,5 +1,5 @@
 <x-layout>
-
+    <x-slot name="title">Student {{$student->user->name}}</x-slot>
     {{-- edit student form --}}
     <template id="edit-student">
         <form method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
@@ -22,7 +22,7 @@
             <!-- Row Right -->
             <div class="grid gap-y-6">
                 <x-input-box lable="Enter Total Fees" :value="old('total_fees', $student->total_fees)" name="total_fees"
-                    id="total_fees" placeholder="50,000" icon="moneybag" />
+                    id="total_fees" placeholder="{{formatCurrency(30000)}}" icon="moneybag" />
 
                 <x-input-box lable="Admission Date" :value="old('created_at', $student->created_at->format('Y-m-d'))"
                     type="date" name="created_at" id="created_at" icon="calendar-event" />

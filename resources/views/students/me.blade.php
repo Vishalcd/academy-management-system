@@ -1,6 +1,6 @@
 <x-layout>
 
-
+    <x-slot name="title">Profile</x-slot>
     <main>
         <div
             class="flex bg-white py-8 px-8 flex-col items-center justify-between rounded-xl border border-slate-200 mb-6 md:mb-12">

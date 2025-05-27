@@ -1,5 +1,5 @@
 <x-layout>
-
+    <x-slot name="title">Employee {{$employee->user->name}}</x-slot>
     {{-- edit employee form --}}
     <template id="edit-employee">
         <form method="POST" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
@@ -24,7 +24,7 @@
             <!-- Row Right -->
             <div class="grid gap-y-6">
                 <x-input-box :value="old('salary', $employee->salary)" lable="Enter Salary" name="salary" id="salary"
-                    placeholder="₹ 10,000.00" icon="moneybag" />
+                    placeholder="{{formatCurrency(30000)}}" icon="moneybag" />
 
                 <!-- Input Row -->
                 <div class="flex items-center gap-2">

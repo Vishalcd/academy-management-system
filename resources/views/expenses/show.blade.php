@@ -1,5 +1,5 @@
 <x-layout>
-
+    <x-slot name="title">Expense</x-slot>
     {{-- edit expense form --}}
     <template id="edit-expense">
         <form method="POST" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8">
@@ -14,14 +14,16 @@
 
                 <x-input-box lable="Enter Title" name="title" id="title" placeholder="Enter Expense Title"
                     icon="article" :value="old('title', $expense->title)" />
-                <x-input-box lable="Unit Price" name="unit_price" id="unit_price" placeholder="₹100.00"
-                    icon="cash-banknote" :value="old('unit_price', $expense->unit_price)" />
+                <x-input-box lable="Unit Price" name="unit_price" id="unit_price"
+                    placeholder="{{formatCurrency(10000)}}" icon="cash-banknote"
+                    :value="old('unit_price', $expense->unit_price)" />
 
                 <x-input-box lable="Total Unit" name="quantity" id="quantity" placeholder="Enter Total Unit"
                     icon="package" :value="old('quantity', $expense->quantity)" />
 
-                <x-input-box lable="Total Price" name="total_price" id="total_price" placeholder="₹1,000.00"
-                    icon="moneybag" :value="old('total_price', $expense->total_price)" />
+                <x-input-box lable="Total Price" name="total_price" id="total_price"
+                    placeholder="{{formatCurrency(10000)}}" icon="moneybag"
+                    :value="old('total_price', $expense->total_price)" />
 
             </div>
 
@@ -59,7 +61,7 @@
 
             <div class="col-start-1 -col-end-1 mt-2">
                 <x-input-text-area lable="Description" icon="file-description" id="description" name="description"
-                    placeholder="Enter breif description of school expense"
+                    placeholder="Enter breif description of expense"
                     :value="old('description', $expense->description)" />
             </div>
 
@@ -155,12 +157,16 @@
                         </x-detail-box>
                     </div>
 
-                    <div class="flex items-center gap-2 order-1 lg:order-3 justify-center lg:justify-start">
+
+                    @if ($expense->photo)
+                    <a href="{{route('expenses.download', $expense->id)}}"
+                        class="flex items-center gap-2 order-1 lg:order-3 justify-center lg:justify-start">
                         <button
                             class="rounded-md px-4 h-9 gap-1 flex items-center justify-center bg-blue-500 text-slate-100 font-semibold">
                             <i class="ti ti-receipt-rupee"></i> Download Recipt
                         </button>
-                    </div>
+                    </a>
+                    @endif
                 </div>
             </div>
         </div>

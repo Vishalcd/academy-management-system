@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title">Settings</x-slot>
     <main>
         <!-- Slot -->
         <div class="bg-white p-4 md:p-8 rounded-xl border border-slate-200 mb-12">

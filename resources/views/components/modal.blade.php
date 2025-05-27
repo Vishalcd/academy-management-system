@@ -1,5 +1,3 @@
-<!-- Modal Form -->
-
 <div id="modal" class="fixed z-50 inset-0 bg-[rgba(0,0,0,0.80)] backdrop-blur-xs items-center  justify-center hidden">
     <div
         class=" h-dvh md:h-min md:rounded-lg md:w-fit w-full shadow-md overflow-hidden relative px-10 py-12  border border-slate-200 bg-slate-50 flex items-center justify-center">

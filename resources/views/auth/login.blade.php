@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{$title ?? "Parishkar School Sds | Accounting Management System"}}</title>
+    <title>Login | Academy Management System</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     {{-- Stylesheet --}}
     @vite('resources/css/app.css')
@@ -32,7 +33,7 @@
     <div
         class="flex min-h-full flex-col justify-center px-6 py-12 h-dvh  items-center bg-white rounded-lg border border-slate-200 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-            <img class="mx-auto h-auto w-15" src="/img/logo.png" alt="Your Company">
+            <img class="mx-auto h-auto w-15" src="/img/logo.png" alt="Your Company logo">
             <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Sign in to your account</h2>
         </div>
 

@@ -146,7 +146,7 @@ class ExpenseController extends Controller
     public function destroy(Expense $expense)
     {
         // delete image before deleting resource
-        Storage::delete('public/storage/recipts/'.$expense->photo);
+        Storage::delete('public/storage/'.$expense->photo);
 
         // Delete the resource
         $expense->delete();
@@ -156,10 +156,19 @@ class ExpenseController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Download recipt from storage.
      */
     public function downloadRecipt(string $id)
     {
 
+        $expense = Expense::findOrFail($id);
+
+        $filePath = storage_path('app/public/'.$expense->photo);
+
+        if (! file_exists($filePath)) {
+            abort(404, 'File not found.');
+        }
+
+        return response()->download($filePath);
     }
 }

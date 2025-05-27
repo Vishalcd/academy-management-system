@@ -49,6 +49,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource("expenses", ExpenseController::class)->only([
         'index', 'store', 'show', 'update', 'destroy'
     ]);
+    Route::get('/download-recipt/{id}', [ExpenseController::class, 'downloadRecipt'])->name('expenses.download');
+
 });
 
 // Auth Routes

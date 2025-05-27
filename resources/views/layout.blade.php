@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{$title ?? "Parishkar School Sds | Accounting
-        Management System"}}</title>
+    <title>{{$title.' | Academy Management System' ?? "Academy Management System"}}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     {{-- Stylesheet --}}
     @vite('resources/css/app.css')
@@ -48,7 +48,7 @@
     <!-- Inject page-specific scripts -->
     @yield('scripts')
 
-    {{-- to remove hash from client side --}}
+    {{-- to remove hash from client side to close pop-form when success--}}
     @if (session('success'))
     <script>
         history.replaceState(null, "", window.location.pathname + window.location.search);

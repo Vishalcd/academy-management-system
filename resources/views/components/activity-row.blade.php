@@ -18,6 +18,6 @@
     </div>
 
     <x-number-container>{{formatCurrency($transaction->transaction_amount)}}</x-number-container>
-    <p class=" text-green-700 font-medium w-10 ">{{ucfirst($transaction->transaction_method)}}</p>
+    <p class=" text-green-700 font-medium w-10 text-sm ">{{ucfirst($transaction->transaction_method)}}</p>
     <x-number-container>{{$transaction->created_at->format('d M, Y')}}</x-number-container>
 </div>

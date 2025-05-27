@@ -17,6 +17,12 @@
     @apply bg-blue-500 text-slate-50;
 }
 
+@layer base {
+    html {
+        @apply text-sm sm:text-base;
+    }
+}
+
 body {
     margin: 0;
     min-width: 100dvw;

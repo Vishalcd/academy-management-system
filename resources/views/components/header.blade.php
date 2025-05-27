@@ -1,4 +1,3 @@
-<!-- Header -->
 <header class="h-[80px] px-4 border-b border-slate-300 bg-white sticky top-0 z-40">
     <div class="container h-full">
         <div class="flex items-center h-full">
@@ -36,9 +35,10 @@
 
                 <div class="flex items-center gap-3">
                     @if (auth()->user() && auth()->user()->role === 'admin')
-                    <button class=" rounded-md border border-slate-200">
+                    <button
+                        class=" {{Route::is('settings.*') ? 'bg-blue-200 text-blue-500 border-blue-300' : 'text-slate-600 border-slate-200'}} rounded-md border ">
                         <a class="w-10 h-10 flex items-center justify-center" href="{{route('settings.index')}}">
-                            <i class="ti ti-settings text-slate-600 text-xl"></i></a>
+                            <i class="ti ti-settings  text-xl"></i></a>
                     </button>
                     @endif
                     <form class="hidden lg:flex" action="{{ route('logout') }}" method="POST">
